@@ -214,6 +214,11 @@ function outCopyFunc() {
   copyTooltip.innerHTML = 'click to copy';
 }
 
+function readyButtons() {
+  saveEvent.removeAttribute('disabled');
+  saveCancel.removeAttribute('disabled');
+}
+
 async function dateSave() {
     event.preventDefault();
     let dateVal = dateSelect.value;
