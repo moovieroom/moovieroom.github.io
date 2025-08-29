@@ -23,6 +23,7 @@ const reviewText = document.getElementById('reviewtext');
 const eventTitle = document.getElementById('eventtitle');
 const eventSum = document.getElementById('eventSum');
 const timePost = document.getElementById('timepost');
+const eventHost = document.getElementById('eventhost');
 const postCopy = document.getElementById('postcopy');
 const postCopySave = document.getElementById('postcopysave');
 const copyTooltip = document.getElementById('copytooltip');
@@ -213,10 +214,16 @@ function outCopyFunc() {
   copyTooltip.innerHTML = 'click to copy';
 }
 
+function readyButtons() {
+  saveEvent.removeAttribute('disabled');
+  saveCancel.removeAttribute('disabled');
+}
+
 async function dateSave() {
     event.preventDefault();
     let dateVal = dateSelect.value;
     let saveTitle = eventTitle.value;
+    let host = eventHost.value;
     let saveCopy = postCopy.value;
     let askedForHelp = askForHelp.checked;
     let enteredDate = moment.tz(dateSelect.value + ' ' + timeSelect.value, timezoneSelect.value);
@@ -235,7 +242,8 @@ async function dateSave() {
         "endTime": endTime,
         "eventTitle": saveTitle,
         "postCopy": saveCopy,
-        "modRequest": askedForHelp
+        "modRequest": askedForHelp,
+        "host": host
         }),
         error: function (status) {
             saveStatus.innerText = 'Something went wrong. Please retry.';
