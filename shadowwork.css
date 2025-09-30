@@ -1,0 +1,217 @@
+/** Current Theme: Dreamintines **/
+/** lovingly crafted by herbnona **/
+
+/* Colour Palette 
+** #322B5F - space cadet - background, emote popup, notifs
+** #E47792 - shimmering blush - disconnect
+** #DFF2D8 - nyanza - chat text and pane text
+** #FCBFB7 - melon - buttons
+** #55678B - queen blue - control buttons 
+** #BDD9BF - turquoise green - reconnect, button hovers, and default username
+** #F8FAF0 - eerie black - modal text
+** #181411 - smokey black - transparent backgrounds
+** #231A20 - raisin - borders and text on light bg
+*/
+
+/* Main Styles */
+* { text-shadow: none !important; }
+
+body {
+    background: url('images/valentines-darkmode.png') #322B5F;
+    cursor: url('images/cowhearts.png'), auto;
+    font-family: 'Cutive Mono', Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: none;
+    font-family: 'VT323', Arial, Helvetica, sans-serif;
+    letter-spacing: .3em;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+a {
+    color: #E47792;
+    text-decoration: none;
+}
+
+mark {
+    background-color: #BDD9BF;
+    color: #000;
+    font-size: 1.4rem;
+}
+
+.section {
+    background: rgba(0,0,0,.5);
+    color: #DFF2D8;
+    margin: 0 auto 1em;
+    padding: 2vw 6vw;
+    width: 80vw;
+    max-width: 1100px;
+    transition: all .2s;
+}
+
+
+input, select {
+    border: 1px solid #000;
+    border-radius: 4px;
+    color: #111;
+    font-family: 'Cutive Mono', Georgia, 'Times New Roman', Times, serif;
+    font-size: .9em;
+    height: 26px;
+    margin: 0 10px 10px 0;
+}
+
+textarea {
+    border-radius: 4px;
+    color: #111;
+    font-family: 'Cutive Mono', Georgia, 'Times New Roman', Times, serif;
+    font-size: .9em;
+}
+
+input[type='checkbox'] {
+    margin: 0 10px 0 0;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="radio"] {
+    height: auto;
+    margin: 0;
+}
+
+input[type="radio"] ~ label {
+    font-family: 'Cutive Mono', Georgia, 'Times New Roman', Times, serif;
+    font-size: .8em;
+    line-height: 2.2em;
+}
+
+.longfield {
+    min-width: 100%;
+    max-width: 80vw;
+}
+
+.fieldcaption {
+    font-size: .8em;
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+summary {
+    list-style-type: '˖ ✎ ⁺ ';
+} 
+
+details[open] > summary {
+    list-style-type: '˖ ✉ ⁺ ';
+}
+
+.spoiler {
+    background-color: #BDD9BF;
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+  
+
+/* Buttons */
+.btn-container {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn {
+    appearance: button;
+    background-color: #FCBFB7;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Cutive Mono', Georgia, 'Times New Roman', Times, serif;
+    font-size: .9rem;
+    font-weight: 400;
+    height: 28px;
+    letter-spacing: 2px;
+    line-height: 16px;
+    margin: 0 0 10px 0;
+    overflow: visible;
+    padding: 5px 14px;
+    text-align: center;
+    text-shadow: none;
+    text-transform: lowercase;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.btn:focus {
+    background-color: #FCBFB7;
+    color: #000;
+    outline: 0;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.btn:hover {
+    background: #BDD9BF;
+    color: #000;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.btn:active, .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .open>.dropdown-toggle.btn-default {
+    background-color: #FCBFB7;
+    border: 1px solid #000;
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    color: #000;
+    outline: 0 !important;
+    text-shadow: none;
+}
+
+.btn:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    color: #000;
+    transform: translate(2px, 2px);
+}
+
+.btn.active.focus, .btn.active:focus {
+        color: #000;
+        outline: 0 !important;
+        text-shadow: none;
+}
+
+.seriousbtn {
+    background-color: #E47792;
+    color: #fff;
+}
+
+.seriousbtn:hover {
+    background: #322B5F;
+    color: #fff;
+}
+
+.btn:disabled, .btn[disabled], .btn:hover:disabled, .btn:hover[disabled] {
+  background-color: #666;
+  color: #fff;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        padding: 5px .85rem;
+    }
+}

@@ -1,0 +1,318 @@
+#motd .day {
+    font-weight: bold;
+    width: 100%;
+    display: block;
+}
+
+#motd .event {
+    font-style: italic;
+    line-height: 2em;
+}
+
+
+#cs-chanlog-text {text-transform:none;}
+
+
+li.queue_entry::after, li.queue_entry:hover::after {
+    content: attr(title);
+    float: right;
+    display: inline-block;
+    text-transform: lowercase;
+}
+
+[class^="chat-msg-a"] .username, [class^="chat-msg-A"] .username {
+  color: #6635d8;
+}
+
+[class^="chat-msg-b"] .username {
+  color: #7a1ad0;
+}
+
+[class^="chat-msg-c"] .username, [class^="chat-msg-ne"] .username {
+  color: #a585c1;
+}
+
+[class^="chat-msg-d"] .username {
+  color: #1ab8d0;
+}
+
+[class^="chat-msg-e"] .username {
+  color: #aeeabc;
+}
+
+[class^="chat-msg-f"] .username, [class^="chat-msg-na"] .username {
+  color: #2bcb88;
+}
+
+[class^="chat-msg-g"] .username {
+  color: #96355a;
+}
+
+[class^="chat-msg-h"] .username {
+  color: #1aa0d0;
+}
+
+[class^="chat-msg-i"] .username {
+  color: #d5cc28;
+}
+
+[class^="chat-msg-j"] .username {
+  color: #4408d1;
+}
+
+[class^="chat-msg-k"] .username {
+  color: #7055ec;
+}
+
+[class^="chat-msg-l"] .username {
+  color: #facef1;
+}
+
+[class^="chat-msg-m"] .username, [class^="chat-msg-M"] .username {
+  color: #6eecff;
+}
+
+[class^="chat-msg-n"] .username {
+  color: #58aa00;
+}
+
+[class^="chat-msg-nonaboo"] .username {
+  color: #683e6b;
+}
+
+[class^="chat-msg-nonacow"] .username {
+  color: #1b5211;
+}
+
+[class^="chat-msg-nonn"] .username {
+  color: #6a5b7a;
+}
+
+[class^="chat-msg-o"] .username, [class^="chat-msg-no"] .username {
+  color: #549178;
+}
+
+[class^="chat-msg-p"] .username {
+  color: #d06a91;
+}
+
+[class^="chat-msg-q"] .username {
+  color: #7b8b91;
+}
+
+[class^="chat-msg-r"] .username {
+  color: #689699;
+}
+
+[class^="chat-msg-s"] .username {
+  color: #87a71e;
+}
+
+[class^="chat-msg-t"] .username {
+  color: #f09244;
+}
+
+[class^="chat-msg-u"] .username {
+  color: #66c49a;
+}
+
+[class^="chat-msg-v"] .username {
+  color: #a7731e;
+}
+
+[class^="chat-msg-w"] .username {
+  color: #cd8676;
+}
+
+[class^="chat-msg-x"] .username {
+  color: #a584e6;
+}
+
+[class^="chat-msg-y"] .username {
+  color: #ae6b6b;
+}
+
+[class^="chat-msg-z"] .username {
+  color: #905b2f;
+}
+
+/* Username Colours - edit to assign a specific colour to a nonnie */
+.chat-msg-herbnona .username {
+  color: #1f4d57;
+}
+
+.chat-msg-nonnie123 .username {
+  color: #F9C2F5;
+}
+
+.chat-msg-rushhh .username {
+  color: #a103fc;
+}
+
+.chat-msg-Patchyy .username, .chat-msg-Patchyyy .username {
+  color: #f7ba63;
+}
+
+.chat-msg-SpringtimeTea .username, .chat-msg-Springtimetea .username, .chat-msg-Springteatime .username {
+  color: #90db8c;
+}
+
+.chat-msg-Nonnie69420 .username, .chat-msg-Nonnie69420vol2 .username, .chat-msg-Meatstreak .username{
+  color: #fffd8f;
+}
+
+.chat-msg-nonnabella2 .username, .chat-msg-Nonnabella .username, .chat-msg-nonnabella .username {
+  color: #fff1ab;
+}
+
+.chat-msg-nonnatella .username, .chat-msg-Nonnatella .username, .chat-msg-nonatella .username, .chat-msg-Nonatella .username, .chat-msg-nonatella2 .username, .chat-msg-Nonatella2 .username {
+  color: #f96e4b;
+}
+
+.chat-msg-Noprabonna .username {
+  color: #C8A2C8;
+}
+
+.chat-msg-toastanon .username {
+  color: #903206;
+}
+
+.chat-msg-noobna .username, .chat-msg-maito .username {
+  color: #5983ba;
+}
+
+.chat-msg-kekoslavia .username, .chat-msg-scout-nona .username {
+  color: #e7adff;
+}
+
+.chat-msg-nona_love .username {
+  color: #E86FC0;
+}
+
+.chat-msg-chericat .username {
+  color: #d158bd;
+}
+
+.chat-msg-choconon .username {
+  color: #572e21;
+}
+
+.chat-msg-al-anon .username, .chat-msg-cheeseyanon .username {
+  color: #ffb74a;
+}
+
+.chat-msg-Kekk .username {
+  color: #bf7777;
+}
+
+.chat-msg-Raggamuffin .username {
+  color: #cc7416;
+}
+
+.chat-msg-nonayyy .username {
+  color: #eded79;
+}
+
+.chat-msg-nonnerz .username {
+  color: #3ede63;
+}
+
+
+.chat-msg-babajaga .username {
+  color: #b05a96;
+}
+
+.chat-msg-keep .username {
+  color: #5e6b32;
+}
+
+.chat-msg-Bananababby .username, .chat-msg-bananoon .username {
+  color: #faefaa;
+}
+
+.chat-msg-shrimppp .username {
+  color: #d5718f;
+}
+
+.chat-msg-nonnita .username {
+    color: #69d1a4;
+}
+
+.chat-msg-nonnaw .username {
+  color: #e8e69e;
+}
+
+.chat-msg-yumekot .username {
+  color: #f5aed1;
+}
+
+.chat-msg-nyanita .username {
+  color: #ffbff5;
+}
+
+.chat-msg-nonalone .username {
+  color: #8fecf2;
+}
+
+.chat-msg-Dutchanon .username {
+  color: #8d84f0;
+}
+
+.chat-msg-chachachaa .username {
+  color: #51e08d;
+}
+
+.chat-msg-NamelessNonny .username, .chat-msg-YiggityDiggity .username {
+  color: #900831;
+}
+
+.chat-msg-chxrrycola .username{
+  color: #B03A2E;
+}
+
+.chat-msg-knckrn4kjnfr4 .username{
+  color: #303973;
+}
+
+.chat-msg-FairiesWearBoots .username, .chat-msg-amazeballs .username, .chat-msg-Nunnie .username{
+  color: #c2bfff;
+}
+
+.chat-msg-rach9 .username, .chat-msg-moon6 .username, .chat-msg-moon7 .username, .chat-msg-megam7 .username {
+  color: #7360bd;
+}
+
+.chat-msg-NadianNonna .username {
+  color: #95c18a;
+}
+
+.chat-msg-pynk .username {
+  color: #D2436C;
+}
+
+.chat-msg-nonnerooni .username {
+  color: #e33d69;
+}
+
+.chat-msg-xXnoonieXx .username {
+  color: #bada55;
+}
+
+.chat-msg-varvas .username {
+  color: #2be01b;
+}
+
+.chat-msg-methany .username, .chat-msg-Nonnetta .username {
+  color: #d1bfff;
+}
+
+/* Emote Overrides */
+.channel-emote[title~="jesusfag"], .channel-emote[title~="thegirlsarefighting"], .channel-emote[title~="i love giving trinkets"], .channel-emote[title~="airplanes*"], .channel-emote[title~="igotspasta"] {
+  max-width: 200px;
+}
+
+.channel-emote[title~="deadly"], .channel-emote[title~="happybirthday4"], .channel-emote[title~="i will kill you"], .channel-emote[title~="bustintotears"], .channel-emote[title~="flamestory"], .channel-emote[title~="disappointed*"], .channel-emote[title~="femalegaze"], .channel-emote[title~="girlz rule"], .channel-emote[title~="pinkpilled"], .channel-emote[title~="retardina"], .channel-emote[title~="smelly bitch"], .channel-emote[title~="triggered"], .channel-emote[title~="keepclutchin"], .channel-emote[title~="happyhalloween1"], .channel-emote[title~="wooshshrimp"], .channel-emote[title~="joanne1"] {
+  max-width: 150px;
+}
+
+
