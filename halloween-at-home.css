@@ -30,9 +30,9 @@
 }
 
 @keyframes popup {
-    0% {left:20px; bottom:-500px;}
-    50% {left:20px; bottom:-50px}
-    100% {left:20px; bottom:-500px;}
+    0% {left:-300px; bottom:-1500px; opacity: .2;}
+    50% {left:20px; bottom:-250px; opacity: .7;}
+    100% {left:-500px; bottom:-1500px; opacity: .2;}
 }
 
 body {
@@ -761,9 +761,11 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 
 .secret-ghost {
     position: fixed;
-    animation: 10s popup linear;
-    opacity: .2;
+    bottom: -1500px;
+    animation: 20s popup ease-out 60s;
+    opacity: .7;
     z-index: -1;
+    width: 20vw;
 }
 
 
