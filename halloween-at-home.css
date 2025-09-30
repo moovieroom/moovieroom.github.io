@@ -29,6 +29,12 @@
     100% {left:100vw; top:60vh}
 }
 
+@keyframes popup {
+    0% {left:20px; bottom:-500px;}
+    50% {left:20px; bottom:-50px}
+    100% {left:20px; bottom:-500px;}
+}
+
 body {
     background: url('backgrounds/halloween-wall.gif') #312732 repeat-x fixed;
     background-size: auto 100vh;
@@ -749,6 +755,13 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 .ghost {
     position: fixed;
     animation: 90s ghostfloat linear infinite;
+    opacity: .2;
+    z-index: -1;
+}
+
+.secret-ghost {
+    position: fixed;
+    animation: 10s popup linear;
     opacity: .2;
     z-index: -1;
 }
