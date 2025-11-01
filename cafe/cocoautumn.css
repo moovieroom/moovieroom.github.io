@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 #videowrap .embed-responsive {
     border: 1px solid;
     border-top: none;
-    border-color: rgba(42,31,45,.88);
+    border-color: rgba(14,21,16,.88);
 }
 
 #userlist, #messagebuffer {
@@ -251,7 +251,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 /* Chat Section */
 #chatheader .label-default {
-    background: rgba(42,31,45,.85);
+    background: rgba(14,21,16,.85);
 }
 
 #chatheader .glyphicon, #videowrap-header .glyphicon {
@@ -268,14 +268,14 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #messagebuffer {
-    background: rgba(42,31,45,.87);
+    background: rgba(14,21,16,.87);
     color: #F6EEBA;
     letter-spacing: 1px;
     font-size: 13px;
 }
 
 .nick-hover {
-    background: rgba(42,31,45,.82);
+    background: rgba(14,21,16,.82);
 }
 
 .nick-highlight {
@@ -283,7 +283,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #chatline {
-    background: rgba(42,31,45,.88) !important;
+    background: rgba(14,21,16,.88) !important;
     border-color: #231A20;
     border-top: none;
     color: #fff;
@@ -305,7 +305,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 /* User Pane */
 #userlist {
-    background: rgba(42,31,45,.84);
+    background: rgba(14,21,16,.84);
 }
 
 .userlist_item {
@@ -337,7 +337,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .profile-box, .user-dropdown {
-    background-color: rgba(42,31,45,.88) !important;
+    background-color: rgba(14,21,16,.88) !important;
     color: #F8FAF0;
     font-size: 11px;
     letter-spacing: 2px;
@@ -363,8 +363,8 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .queue_entry {
-    background: rgba(42,31,45,.84);
-    border-color: rgba(42,31,45,.88);
+    background: rgba(14,21,16,.84);
+    border-color: rgba(14,21,16,.88);
     padding: 0px 8px 8px;
 }
 
@@ -386,7 +386,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .queue_entry.queue_active {
-    background: rgba(42,31,45,.88);
+    background: rgba(14,21,16,.88);
 }
 
 .queue_entry.queue_active a {
@@ -445,7 +445,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 #rightpane-inner input.form-control[type="text"] {
     background-color: #0952568a !important;
     border-radius: 0;
-    border-color: rgba(42,31,45,.88);
+    border-color: rgba(14,21,16,.88);
     color: rgba(225,225,225,.8);
     width: 98%;
 }
@@ -463,11 +463,11 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #plmeta {
-    border-color: rgba(42,31,45,.88);
+    border-color: rgba(14,21,16,.88);
     color: #8191B1;
     font-size: 11px;
     letter-spacing: 3px;
-    background: rgba(42,31,45,.88);
+    background: rgba(14,21,16,.88);
     padding: 2px 4px;
     text-shadow: none;
 }
@@ -502,7 +502,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #guestlogin > input {
-    border-color: rgba(42,31,45,.88);
+    border-color: rgba(14,21,16,.88);
     border-top: none;
     letter-spacing: 2px;
     font-size: 12px;
@@ -527,7 +527,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #pollwrap .well {
-    background: rgba(42,31,45,.83);
+    background: rgba(14,21,16,.83);
     color: #F8FAF0;
 }
 
@@ -621,7 +621,7 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 }
 
 .modal-body .pagination>li.disabled>a, .modal-body .pagination>li.disabled>a:hover, .modal-body .pagination>li.disabled>span, .modal-body .pagination>li.disabled>span:hover {
-    background: rgba(42,31,45,.83);
+    background: rgba(14,21,16,.83);
     color: #eee;
 }
 
@@ -679,7 +679,7 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 }
 
 #image-popup.show {
-    background: rgba(42,31,45,.85);
+    background: rgba(14,21,16,.85);
     opacity: 100;
     transition: opacity .2s;
     z-index: 9;
