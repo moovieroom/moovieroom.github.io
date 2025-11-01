@@ -4,7 +4,7 @@
 /* Colour Palette 
 ** #230D0A - licorice - background, emote popup, notifs
 ** #6A1B12 - blood red - disconnect
-** #F6EEBA - vanilla - chat text and pane text
+** #E8CAAE - vanilla - chat text and pane text
 ** #587291 - payne's gray - buttons
 ** #095256 - midnight green - control buttons, pane headers
 ** #6A1B12 - blood red - button hovers and default username
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text, .navbar-inverse .navbar-brand {
-    color: #F6EEBA;
+    color: #E8CAAE;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-right-radius: 0;
     padding: 8px;
     background: #095256;
-    color: #F6EEBA;
+    color: #E8CAAE;
     letter-spacing: 2px;
     font-size: 13px;
     text-transform: lowercase;
@@ -269,7 +269,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 #messagebuffer {
     background: rgba(14,21,16,.87);
-    color: #F6EEBA;
+    color: #E8CAAE;
     letter-spacing: 1px;
     font-size: 13px;
 }
@@ -313,7 +313,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .userlist_owner {
-    color: #F6EEBA !important;
+    color: #E8CAAE !important;
 }
 
 .userlist_op {
@@ -399,7 +399,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .videolist {
-    color: #F6EEBA;
+    color: #E8CAAE;
 }
 
 #queue_next::before {
@@ -416,7 +416,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
     border: 0px;
     background: #095256 !important;
     box-shadow: 0px 0px 0px;
-    color: #F6EEBA;
+    color: #E8CAAE;
 }
 
 .videolist .btn:hover, .videolist .btn:focus {
@@ -553,7 +553,7 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 
 #pollwrap .well h3 {
     margin-top: 0;
-    color: #F6EEBA;
+    color: #E8CAAE;
     font-size: 18px;
 }
 
