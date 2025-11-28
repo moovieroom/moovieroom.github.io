@@ -267,7 +267,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #messagebuffer {
-    background: #1B130Ecc;
+    background: #1B130Eee;
     color: #E5DADA;
     letter-spacing: 1px;
     font-size: 13px;
@@ -282,7 +282,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #chatline {
-    background: rgba(0,0,0,.8) !important;
+    background: #1B130Eee !important;
     border-color: #231A20;
     border-top: none;
     color: #fff;
@@ -295,16 +295,16 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #newpollbtn::before {
-    content: '.𖥔 ݁ ˖\0020';
+    content: '𐂂\0020';
 }
 
 #emotelistbtn::before {
-    content: '𓍊𓋼𓍊𓋼𓍊\0020';
+    content: '☃︎\0020';
 }
 
 /* User Pane */
 #userlist {
-    background: #1B130E99;
+    background: #1B130Ecc;
 }
 
 .userlist_item {
