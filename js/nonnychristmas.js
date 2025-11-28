@@ -66,6 +66,14 @@ imagepopup.id = "image-popup";
 wrapelement.appendChild(imagepopup);
 imagepopup.appendChild(imgTag);
 
+const snowbutton = document.createElement('button');
+const leftcontrols = document.getElementById('leftcontrols');
+snowbutton.innerText = '❆ stop snow';
+snowbutton.id = 'snowbutton';
+snowbutton.className = 'btn btn-sm btn-default snowbutton';
+leftcontrols.appendChild(snowbutton);
+
+
 /**** END - Chat Bot variables ****/
 
 
@@ -231,21 +239,6 @@ function prepareMessage(msg) {
             msg=heldMsg.split('').map((v) =>
             Math.round(Math.random()) ? v.toUpperCase() : v.toLowerCase()
             ).join('') + ' spongebobdurr';
-        } else if (msg.indexOf("!bonk") == 0) {
-            // bonk function, if message begins with !bonk
-            var heldMsg = msg.split('!bonk ')[1];
-            if (heldMsg == undefined) {
-                msg='who are you trying to bonk?';
-            } else {
-                msg='turbobonk \n' + heldMsg + ' got bonked!';
-            }
-        } else if (msg.indexOf("!time") == 0) {
-            // current local time function, if message begins with !time
-            var h = new Date().getHours();
-            h<10 ? h='0'+h : '';
-            var m = new Date().getMinutes();
-            m<10 ? m='0'+m : '';
-            msg='current time = '+h+':'+m;
         } else if (msg.indexOf("!now") == 0) {	
             // now playing function, if message begins with !now	
             msg='Now playing = '+$(".queue_active a").html();	
@@ -273,14 +266,6 @@ function prepareMessage(msg) {
             } else {
                 rnd=a=Math.round(Math.random()*(gift_Array.length-1));
                 msg='❅ ❆ ❄ present for ' + heldMsg + '! ' + gift_Array[rnd];
-            }
-        } else if (msg.indexOf("!bonk") == 0) {
-            // gift giving function, if message begins with !gift
-            var heldMsg = msg.split('!bonk ')[1];
-            if (heldMsg == undefined) {
-                msg='who are you trying to bonk?';
-            } else {
-                msg='turbobonk \n' + heldMsg + ' got bonked!';
             }
         } else if (msg.indexOf("!santa") == 0) {
             // Santa gift function, if message begins with !santa
@@ -431,6 +416,18 @@ $("#queue_next").on("click", function() {
     ytID=ytID.split('&')[0];
     if (day == 2) {
         idSave(ytID);
+    }
+});
+
+$("#snowbutton").on("click", function() {
+    const snowcontain = document.getElementById("snowcontain");
+    if (snowcontain.style.display !== 'none') {
+        snowcontain.style.display = 'none';
+        snowbutton.innerText = '❆ let it snow';
+    }
+    else {
+        snowcontain.style.display = 'block';
+        snowbutton.innerText = '❆ stop snow';
     }
 });
 
