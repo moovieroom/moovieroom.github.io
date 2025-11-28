@@ -14,7 +14,7 @@
 */
 
 /* Main Styles */
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * { text-shadow: none !important; }
 
@@ -26,12 +26,12 @@
 body {
     background: url('backgrounds/starry-tile.jpg') #312732;
     cursor: url('cursors/gingerbread-cow-cursor.png'), auto;
-    font-family:  "Cherry Bomb One", system-ui;
+    font-family: "Bellota", system-ui;
 }
 
 h1, h2, h3, h4, h5, h6 {
     text-shadow: none;
-    font-family:  "Delius Swash Caps", cursive;
+    font-family: "Shantell Sans", cursive;
 }
 
 #wrap {

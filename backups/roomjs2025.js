@@ -45,14 +45,9 @@ const emotes_Array = [
     "angelcake","burger1","cherrypie","cheese","drink1","burger2","icecream","cake2","milk1","milk2","milk3","milk4","pizza*","zebracake","junkfood","tea1","sushi1","sushi2","riceball1","snack1","ramen1","ramen2","sake1","kpop1","milkbone","snowcone","cheekystrawb","pancakes1","chocolates1","coffee1","vendsnack1","vendsnack2","vendsnack3","vendsnack4","vendsnack5","vendsnack6","vendsnack7","vendsnack8","vendsnack9","vendsnack10","vendsnack11","vendsnack12","vendsnack13","vendsnack14","vendsnack15","vendsnack16","vendsnack17","vendsnack18","vendsnack19","vendsnack20","vendsnack21","vendsnack22","vendsnack23","vendsnack24","vendsnack25","vendsnack26","vendsnack27","vendsnack28","vendsnack29","vendsnack30","vendsnack31","vendsnack32","vendsnack33","vendsnack34","vendsnack35","vendsnack36","vendsnack37","vendsnack38","vendsnack39","vendsnack40","vendtoy1","vendtoy2","vendtoy3","vendtoy4","vendtoy5","vendtoy6","vendtoy7","vendtoy8","vendtoy9","vendtoy10","vendtoy11","vendtoy12","vendtoy13","vendtoy14","vendtoy15","vendtoy16","vendtoy17"
 ];
 
-// [!gift] Christmas gifts
-const gift_Array = [
-    "giftbox","giftcandycane","giftcocoa","giftdeerglobe","giftgingerbreadman","giftgreenpresent","gifthouse","giftknitting","giftpresentglobe","giftredpresent","giftsantaglobe","gifttreat","gifttree","gifttreeglobe","giftcherryicebox","giftjoulutorttu","giftpepernoten","giftpudding","giftstroopwafel","giftyulelog","giftpizelle","giftbuttertart","giftbasket","giftboot","giftbunny1","giftbunny2","giftcake","giftcakepop","giftcandycane2","giftcat1","giftcat2","giftcocoa2","giftcocoa2","giftcocoa3","giftcocoa4","giftcone1","giftcone2","giftcone3","giftcupcake1","giftcupcake2","giftcookie","giftcupcake3","giftdog","giftdog2","giftdog3","gifteggnog","giftessence","giftgameboy","giftcamecube","giftgba","gifthellokitty","gifthouse2","giftipod1","giftipod2","giftidog","giftlamp","giftmixer","giftmoney","giftpresent2","giftpudding2","giftrecord","giftsnes","giftstocking","giftsweater","giftteddy","giftteddy2","giftteddy3","giftteddy4","gifttrain","gifttreat2","giftyulelog2"
-];
-
-// [!santa] Santa gifts
-const santa_Array = [
-    "toybear","toybearsleep","toyblanket","toybunny","toycoal","toycrayons","toygame","toylocket","toysnowman","toybarbie","toybeanie1","toybeanie2","toybear","toybetty","toybopit","toycamera","toydiscman","toygb","toygirltech","toyidog","toylamp","toylipsmack","toyn64","toyplush1","toyplush2","toyplush2","toyplush3","toypolly","toypony1","toypony2","toytalkback","toytama","toyteddy"
+// [!herb] herb responses
+const herbbot_Array = [
+    "y'all.","lol I'm old","vendbot I swear to god","why do my own creations forsake me","play D'Angelo","let she who hath not read the Frollo doujin cast the first stone","snacktime","let's get baja blasted","biiiitch","I'm sleep","what if Trisha Paytas covered this song","why does he look like that"
 ];
 
 const queue = document.getElementById("queue");
@@ -96,8 +91,7 @@ var newthemeSelect = [
     ["Halloween at Home", "/css/themes/slate.css", "https://moovieroom.github.io/halloween-at-home.css"],
     ["Moomin Winter", "/css/themes/slate.css", "https://moovieroom.github.io/winter.css"],
     ["Merry Matryoshka", "/css/themes/slate.css", "https://moovieroom.github.io/matryoshka.css"],
-    ["Christmas", "/css/themes/slate.css", "https://moovieroom.github.io/herbalchristmas.css"],
-    ["Gingerbread Street", "/css/themes/slate.css", "https://moovieroom.github.io/gingerbreadstreet.css"]
+    ["Christmas", "/css/themes/slate.css", "https://moovieroom.github.io/herbalchristmas.css"]
 ]
 
 // Add new options
@@ -168,40 +162,69 @@ function getPokemon() {
     }
 }
 
-function daysUntilChristmas() {
-    var one_day = 1000 * 60 * 60 * 24
-      
-    // To set present_dates to two variables
-    var present_date = new Date();
-      
-    // 0-11 is Month in JavaScript
-    var christmas_day = new Date(present_date.getFullYear(), 11, 26)
-      
-    // To Calculate next year's Christmas if passed already.
-    if (present_date.getMonth() == 11 && present_date.getDate() > 25)
-    christmas_day.setFullYear(christmas_day.getFullYear() + 1)
-      
-    // To Calculate the result in milliseconds and then converting into days
-    var Result = Math.round(christmas_day.getTime() - present_date.getTime()) / (one_day);
-      
-    // To remove the decimals from the (Result) resulting days value
-    return 'there are ' + Result.toFixed(0) + ' days until Christmas!';
+function counterCheck() {
+    var countcontent = $("#plcount").text();
+    if (countcontent.indexOf('35') < 0) {
+        $("#showmediaurl").removeClass('disabled');
+        $("#showsearch").removeClass('disabled');
+        $("#library button").removeClass('disabled');
+    } else {
+        $("#showmediaurl").addClass('disabled');
+        $("#showsearch").addClass('disabled');
+        $("#library button").addClass('disabled');
+    }
 }
 
-function getUserCount() {
-    var userList = document.getElementById("userlist");
-    return userList.childElementCount;
+function uniqueContributors(queuedVids, leader) {
+    var contributors = [];
+    contributors.push(leader);
+    for (i = 1; i < queuedVids.length; i++) {
+        var whoAdded = queuedVids[i].getAttribute("title");
+        whoAdded = whoAdded.replace('Added by: ','');
+        $(queuedVids[i]).addClass(whoAdded);
+        contributors.push(whoAdded);
+    }
+    let uniqueContributors = [...new Set(contributors)];
+    return uniqueContributors;
 }
 
-function createNonnyList() {
-    var nonnies = []
-    var userList = document.getElementById("userlist");
-    var userListCollection = userList.children;
-    var userCount = userList.childElementCount;
-    for (i = 0; i < userCount; i++) {
-        var currnonny = userListCollection[i];
-        var currnonnyName = currnonny.children[1].innerText;
-        nonnies.push(currnonnyName);
+function setOrderAttrs(uniqueCont) {
+    var matchingVids = [];
+    for (var j = uniqueCont.length - 1; j >= 0; j--) {
+        matchingVids = document.querySelectorAll('[data-addedby="'+uniqueCont[j]+'"]');
+        for (var k = 0; k < matchingVids.length; k++ ) {
+            matchingVids[k].setAttribute('data-queuedbyorder',j);
+        }
+    }
+}
+
+function createArraysPerUser(usergroup) {
+    for (i = 0; i < usergroup.length; i++) {
+        var arrayName = usergroup[i];
+        sortedVideos[arrayName] = queue.getElementsByClassName(arrayName);
+    }
+}
+
+function smartShuffle(leader) {
+    let queuedVids = queue.getElementsByClassName("queue_temp");
+    var dedupedCont = uniqueContributors(queuedVids, leader);
+    setOrderAttrs(dedupedCont);
+    createArraysPerUser(dedupedCont);
+
+    var numVidsArray = [];
+    for (const item in sortedVideos) {
+        numVidsArray.push(sortedVideos[item].length);
+    }
+    var largestArray = Math.max(...numVidsArray);
+    
+    for (i = largestArray; i >= 0; i--) {
+        for (const item in sortedVideos) {
+            if (sortedVideos[item][i] != undefined){
+                sortedVideos[item][i].getElementsByClassName("qbtn-next")[0].click();
+            } else {
+                continue;
+            }
+        }
     }
 }
 
@@ -263,49 +286,6 @@ function prepareMessage(msg) {
             msg='Tunesday playlists are saved here: https://moovieroom.github.io/tunesday-playlists';	
         } else if (msg.indexOf("!blocked") == 0) {	
             msg='`' + $(".queue_active a").html() + '`' + ' is region blocked. Host: please skip this video. ' + $(".queue_active").attr('title').replace('Added by: ','') + ', please find an alternate video link if possible.';	
-        } else if (msg.indexOf("!gift") == 0) {
-            // gift giving function, if message begins with !gift
-            var heldMsg = msg.split('!gift ')[1];
-            if (heldMsg == undefined) {
-                msg='remember to include the name of the nonny you want to send a gift!';
-            } else if (heldMsg.indexOf("mr") == 0 || heldMsg.indexOf("moid") >= 0 || heldMsg.indexOf("Mr") == 0) {
-                msg='moids get no presents';
-            } else {
-                rnd=a=Math.round(Math.random()*(gift_Array.length-1));
-                msg='❅ ❆ ❄ present for ' + heldMsg + '! ' + gift_Array[rnd];
-            }
-        } else if (msg.indexOf("!bonk") == 0) {
-            // gift giving function, if message begins with !gift
-            var heldMsg = msg.split('!bonk ')[1];
-            if (heldMsg == undefined) {
-                msg='who are you trying to bonk?';
-            } else {
-                msg='turbobonk \n' + heldMsg + ' got bonked!';
-            }
-        } else if (msg.indexOf("!santa") == 0) {
-            // Santa gift function, if message begins with !santa
-            rnd=a=Math.round(Math.random()*(santa_Array.length-1));
-            msg='❅ ❆ ❄ Santa brought you a ' + santa_Array[rnd];
-        } else if (msg.indexOf("!countdown") == 0) {
-            // days until Christmas, if message begins with !countdown
-            msg=daysUntilChristmas();
-        } else if (msg.indexOf("!mistletoe") == 0) {
-            // nonnies give kisses if message begins with !mistletoe
-            var currUserCount = getUserCount();
-            var nonnies = []
-            var userList = document.getElementById("userlist");
-            var userListCollection = userList.children;
-            for (i = 0; i < currUserCount; i++) {
-                var currnonny = userListCollection[i];
-                var currnonnyName = currnonny.children[1].innerText;
-                nonnies.push(currnonnyName);
-            }
-            var rand1=a=Math.round(Math.random()*(currUserCount-1));
-            var rand2=a=Math.round(Math.random()*(currUserCount-1));
-            if (rand1 == rand2) {
-                rand2=a=Math.round(Math.random()*(currUserCount-1));
-            }
-            msg='mistletoe ' + nonnies[rand1] + ' gave ' + nonnies[rand2] + ' a smek';
         } else {	
             COMMAND=false;	
         }	
