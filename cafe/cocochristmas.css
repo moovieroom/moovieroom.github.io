@@ -10,7 +10,7 @@
 ** #6A1B12 - blood red - button hovers and default username
 ** #F8FAF0 - eerie black - modal text
 ** #181411 - smokey black - transparent backgrounds
-** #0f303b - jet black - chat and playlist backgrounds
+** #071f28 - ink black - chat and playlist backgrounds
 ** #231A20 - raisin - borders and text on light bg
 ** #A4B494 - sage - reconnect
 */
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #motdwrap {
-    background: #181411a8;
+    background: #071f2899;
 }
 
 #motd .day {
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 #videowrap .embed-responsive {
     border: 1px solid;
     border-top: none;
-    border-color: #0f303bcc;
+    border-color: #071f28cc;
 }
 
 #userlist, #messagebuffer {
@@ -252,7 +252,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 /* Chat Section */
 #chatheader .label-default {
-    background: #0f303bcc;
+    background: #071f28cc;
 }
 
 #chatheader .glyphicon, #videowrap-header .glyphicon {
@@ -269,14 +269,14 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #messagebuffer {
-    background: #0f303bcc;
+    background: #071f28cc;
     color: #BFB6BB;
     letter-spacing: 1px;
     font-size: 13px;
 }
 
 .nick-hover {
-    background: #0f303bcc;
+    background: #071f28cc;
 }
 
 .nick-highlight {
@@ -284,8 +284,8 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #chatline {
-    background: #0f303bcc !important;
-    border-color: #0f303bcc;
+    background: #071f28cc !important;
+    border-color: #071f28cc;
     border-top: none;
     color: #fff;
     letter-spacing: 1px;
@@ -306,7 +306,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 /* User Pane */
 #userlist {
-    background: #0f303bcc;
+    background: #071f28cc;
 }
 
 .userlist_item {
@@ -338,7 +338,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .profile-box, .user-dropdown {
-    background-color: #0f303bcc !important;
+    background-color: #071f28cc !important;
     color: #F8FAF0;
     font-size: 11px;
     letter-spacing: 2px;
@@ -364,8 +364,8 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .queue_entry {
-    background: #0f303bcc;
-    border-color: #0f303bcc;
+    background: #071f28cc;
+    border-color: #071f28cc;
     padding: 0px 8px 8px;
 }
 
@@ -387,7 +387,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .queue_entry.queue_active {
-    background: #0f303bcc;
+    background: #071f28cc;
 }
 
 .queue_entry.queue_active a {
@@ -446,7 +446,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 #rightpane-inner input.form-control[type="text"] {
     background-color: #C331498a !important;
     border-radius: 0;
-    border-color: #0f303bcc;
+    border-color: #071f28cc;
     color: rgba(225,225,225,.8);
     width: 98%;
 }
@@ -464,11 +464,11 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #plmeta {
-    border-color: #0f303bcc;
+    border-color: #071f28cc;
     color: #8191B1;
     font-size: 11px;
     letter-spacing: 3px;
-    background: #0f303bcc;
+    background: #071f28cc;
     padding: 2px 4px;
     text-shadow: none;
 }
@@ -503,7 +503,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #guestlogin > input {
-    border-color: #0f303bcc;
+    border-color: #071f28cc;
     border-top: none;
     letter-spacing: 2px;
     font-size: 12px;
@@ -528,7 +528,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 #pollwrap .well {
-    background: #0f303bcc;
+    background: #071f28cc;
     color: #F8FAF0;
 }
 
@@ -622,7 +622,7 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 }
 
 .modal-body .pagination>li.disabled>a, .modal-body .pagination>li.disabled>a:hover, .modal-body .pagination>li.disabled>span, .modal-body .pagination>li.disabled>span:hover {
-    background: #0f303bcc;
+    background: #071f28cc;
     color: #eee;
 }
 
@@ -680,7 +680,7 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 }
 
 #image-popup.show {
-    background: #0f303bcc;
+    background: #071f28cc;
     opacity: 100;
     transition: opacity .2s;
     z-index: 9;
