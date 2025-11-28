@@ -2,12 +2,13 @@
 /** lovingly crafted by herbnona **/
 
 /* Colour Palette 
-** #312732 - raisin black - background, emote popup, notifs
-** #F15152 - imperial red - disconnect
+** #443022 - dark coffee - background, emote popup, notifs
+** #1B130E - black coffee - chat bg
+** #90323D - burnt rose - disconnect
 ** #E5DADA - timberwolf - chat text and pane text
 ** #ECB176 - light caramel - buttons
 ** #6f4e37 - coffee bean - pane headers, control buttons 
-** #8788B2 - cool gray - reconnect, button hovers, and default username
+** #98C9A3 - celadon - reconnect, button hovers, and default username
 ** #F8FAF0 - eerie black - modal text
 ** #181411 - smokey black - transparent backgrounds
 ** #231A20 - raisin - borders and text on light bg
@@ -24,7 +25,7 @@
 }
 
 body {
-    background: url('backgrounds/starry-tile.jpg') #312732;
+    background: url('backgrounds/starry-tile.jpg') #443022;
     cursor: url('cursors/gingerbread-cow-cursor.png'), auto;
     font-family: "Bellota", system-ui;
 }
@@ -43,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
-    background: #312732;
+    background: #443022;
     color: #F8FAF0;
 }
 
@@ -53,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-inverse {
-    background: #181411d9 !important;
+    background: #443022d9 !important;
     text-shadow: none;
     text-transform: lowercase;
     letter-spacing: 3px;
@@ -93,10 +94,6 @@ h1, h2, h3, h4, h5, h6 {
 #motd .event {
     font-style: italic;
     line-height: 2em;
-}
-
-#motd .dollz {
-    filter: saturate(0.8);
 }
 
 @media (max-width: 768px) {
@@ -209,7 +206,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .btn:hover {
-    background: #8788B2;
+    background: #98C9A3;
     color: #000;
     text-decoration: none;
     text-shadow: none;
@@ -262,15 +259,15 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .timestamp {
-    color: #312732;
+    color: #443022;
 }
 
 .username {
-    color: #8788B2;
+    color: #98C9A3;
 }
 
 #messagebuffer {
-    background: url('/images/blue-fabric-bg.jpg') rgba(0,0,0,.7);
+    background: #1B130Ecc;
     color: #E5DADA;
     letter-spacing: 1px;
     font-size: 13px;
@@ -307,8 +304,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 
 /* User Pane */
 #userlist {
-    background: url('/images/purple-whimsi-bg.jpeg') rgba(0,0,0,.4);
-    filter: hue-rotate(250deg);
+    background: #1B130E99;
 }
 
 .userlist_item {
@@ -567,19 +563,19 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 
 /* Server Messages */
 .server-msg-reconnect {
-    border-color: #8788B2 ;
-    color: #8788B2 ;
+    border-color: #98C9A3 ;
+    color: #98C9A3 ;
 }
 
 .server-msg-disconnect {
-    border-color: #F15152;
-    color: #F15152;
+    border-color: #90323D;
+    color: #90323D;
 }
 
 /* Modals */
 .modal-content {
     color: #000;
-    background: #312732;
+    background: #443022;
     border-radius: 0;
     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
     text-shadow: none;
