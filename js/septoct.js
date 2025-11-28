@@ -27,8 +27,12 @@ function setCookie(name,value,days) {
         var expires = "; expires=" + date.toUTCString();
         var maxage = "; max-age=" + (days * 86400000);
     }
-    document.cookie = name + "=" + (value || "")  + expires + maxage + "; path=/r/moovieroom";
+    document.cookie = name + "=" + (value || "")  + expires + maxage + "; path=/r/theherbgarden";
 }
+
+const headers = new Headers();
+const d = new Date();
+let day = d.getDay();
 
 /**** Chat Bot variables ****/
 // [!8ball] Magic 8 Ball responses
@@ -41,9 +45,33 @@ const emotes_Array = [
     "angelcake","burger1","cherrypie","cheese","drink1","burger2","icecream","cake2","milk1","milk2","milk3","milk4","pizza*","zebracake","junkfood","tea1","sushi1","sushi2","riceball1","snack1","ramen1","ramen2","sake1","kpop1","milkbone","snowcone","cheekystrawb","pancakes1","chocolates1","coffee1","vendsnack1","vendsnack2","vendsnack3","vendsnack4","vendsnack5","vendsnack6","vendsnack7","vendsnack8","vendsnack9","vendsnack10","vendsnack11","vendsnack12","vendsnack13","vendsnack14","vendsnack15","vendsnack16","vendsnack17","vendsnack18","vendsnack19","vendsnack20","vendsnack21","vendsnack22","vendsnack23","vendsnack24","vendsnack25","vendsnack26","vendsnack27","vendsnack28","vendsnack29","vendsnack30","vendsnack31","vendsnack32","vendsnack33","vendsnack34","vendsnack35","vendsnack36","vendsnack37","vendsnack38","vendsnack39","vendsnack40","vendtoy1","vendtoy2","vendtoy3","vendtoy4","vendtoy5","vendtoy6","vendtoy7","vendtoy8","vendtoy9","vendtoy10","vendtoy11","vendtoy12","vendtoy13","vendtoy14","vendtoy15","vendtoy16","vendtoy17"
 ];
 
-// [!herb] herb responses
-const herbbot_Array = [
-    "y'all.","lol I'm old","vendbot I swear to god","why do my own creations forsake me","play D'Angelo","let she who hath not read the Frollo doujin cast the first stone","snacktime","let's get baja blasted","biiiitch","I'm sleep","what if Trisha Paytas covered this song","why does he look like that"
+// [!trickortreat] candy options
+const candy_Array = [
+    "ttboba1","ttboba2","ttcakedonut","ttcandyapple","ttcandycorn","ttcandypumpkin","ttcaramelapple","ttcrepe1","ttdonutsprinkle","ttparfait","ttpumpkindonut","ttpumpkinpie","ttspiderdonut","ttvamp","ttcatinthebox", "tteyedrink", "ttcauldron","tteyeballs","ttcandybucket2","ttbrain","ttlollipop","ttpopcorn2","ttspookyfloss","ttskellypink","ttskeletea","ttcreepcake2","ttpumpjuice","ttpumpbag","ttmeltycorn","ttmacabron3","ttmacabron2","ttmacabron","ttgift","ttlatte","ttdonut","ttdrank","ttcreepcake","ttpopcorn","ttcandy2","ttcandy1","ttcrunch","ttapple"
+
+];
+
+// [!dressup] costume options
+const costume_Array = [
+"dressup1","dressup2","dressup3","dressup4","dressup5","dressup6","dressup7","dressup8","dressup9","dressup10","dressup11","dressup12","dressup13","dressup14","dressup15","dressup16","dressup17","dressup18","dressup19","dressup20","dressup21","dressup22","dressup23","dressup24","dressup25","dressup26","dressup27","dressup28","dressup29","dressup30","dressup31","dressup32","dressup33","dressup34","dressup35","dressup36"
+];
+
+// [!boo] options
+const boo_Array = [
+"https://moovieroom.github.io/images/ghosts/cow5.png",
+"https://moovieroom.github.io/images/ghosts/creepy3.png",
+"https://moovieroom.github.io/images/ghosts/creepy4.png",
+"https://moovieroom.github.io/images/ghosts/creepy5.png",
+"https://moovieroom.github.io/images/ghosts/creepy2.png",
+"https://moovieroom.github.io/images/ghosts/cute1.png",
+"https://moovieroom.github.io/images/ghosts/cute3.png",
+"https://moovieroom.github.io/images/ghosts/cute4.png",
+"https://moovieroom.github.io/images/ghosts/cow1.png",
+"https://moovieroom.github.io/images/ghosts/cow2.png",
+"https://moovieroom.github.io/images/ghosts/cow4.png",
+"https://moovieroom.github.io/images/ghosts/creepy6.png",
+"https://moovieroom.github.io/images/ghosts/cute5.png",
+"https://moovieroom.github.io/images/ghosts/cute6.png"
 ];
 
 const queue = document.getElementById("queue");
@@ -57,24 +85,7 @@ imagepopup.id = "image-popup";
 wrapelement.appendChild(imagepopup);
 imagepopup.appendChild(imgTag);
 
-/**** END - Chat Bot variables ****/
-
-/**** Custom Buttons ****/
-const heartbutton = document.createElement('button');
-const leftcontrols = document.getElementById('leftcontrols');
-heartbutton.innerText = '♥ stop hearts';
-heartbutton.id = 'heartbutton';
-heartbutton.className = 'btn btn-sm btn-default heartbutton effect';
-
-const modeswitch = document.createElement('button');
-modeswitch.innerText = '☼ / ☾';
-modeswitch.id = 'modebutton';
-modeswitch.className = 'btn btn-sm btn-default modebutton effect';
-
-leftcontrols.appendChild(modeswitch);
-leftcontrols.appendChild(heartbutton);
-
-/**** END - Custom Buttons ****/
+/**** END - Chat Bot variables **** /
 
 
 /**** Custom Theme Handling ****/
@@ -155,6 +166,23 @@ var COMMAND = false;
 /**** Chat Bot functions ****/
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getGhost(ghostID) {
+    var ghostType = '';
+    imgTag.src = boo_Array[ghostID];
+    imgTag.height = '400';
+    $(imagepopup).addClass('show');
+    setTimeout(function() { 
+        $(imagepopup).removeClass('show');
+        imgTag.src='';
+    }, 1500);
+    if (boo_Array[ghostID].indexOf('cute') > 0) {
+        ghostType = 'cute';
+    } else {
+        ghostType = 'scary';
+    }
+    return 'you have been visited by a ' + ghostType + ' ghost!';
 }
 
 function getPokemon() {
@@ -250,14 +278,11 @@ function prepareMessage(msg) {
         if (msg.indexOf("!8ball") == 0) {
             // magic 8 ball function, if message begins with !8ball
             rnd=a=Math.round(Math.random()*(AskAnswers_Array.length-1));
-            msg='🎱 shake shake shake 🎱  ✧･ﾟ: *✧･ﾟ:* *:･ﾟ✧*:･ﾟ✧ ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ \n' + AskAnswers_Array[rnd];
+            msg='🎱 shake shake shake 🎱  . ݁₊ ⊹ . ݁˖ . ݁ \n' + AskAnswers_Array[rnd];
         } else if (msg.indexOf("!vend") == 0) {
             // vending machine function, if message begins with !vend
             rnd=a=Math.round(Math.random()*(emotes_Array.length-1));
             msg='yay! you got ' + emotes_Array[rnd];
-        } else if (msg.indexOf("!advice") == 0) {
-            // advice function, if message begins with !advice
-            msg='advicebot gave too much bad advice and died';
         } else if (msg.indexOf("!encounter") == 0) {
             // pokemon function, if message begins with !encounter
             msg=getPokemon();
@@ -267,14 +292,6 @@ function prepareMessage(msg) {
             msg=heldMsg.split('').map((v) =>
             Math.round(Math.random()) ? v.toUpperCase() : v.toLowerCase()
             ).join('') + ' spongebobdurr';
-        } else if (msg.indexOf("!bonk") == 0) {
-            // bonk function, if message begins with !bonk
-            var heldMsg = msg.split('!bonk ')[1];
-            if (heldMsg == undefined) {
-                msg='who are you trying to bonk?';
-            } else {
-                msg='turbobonk \n' + heldMsg + ' got bonked!';
-            }
         } else if (msg.indexOf("!time") == 0) {
             // current local time function, if message begins with !time
             var h = new Date().getHours();
@@ -289,10 +306,38 @@ function prepareMessage(msg) {
         } else if (msg.indexOf("!rules") == 0) {	
             msg='\n⚘ Be nice\n⚘ Do not sperg out\n⚘ Right click user to ignore\n⚘ No males';	
         } else if (msg.indexOf("!guide") == 0) {	
-            msg='Hosting How-To: https://docs.google.com/document/d/1L-s2k-Pac1_QvM8T25PirP6G5JslF4gqWeY0muQ5vQM/edit?usp=sharing';	
+            msg='Hosting a Moovie Night: https://moovieroom.github.io/moovie-guide\nHosting a YouTube Night: https://moovieroom.github.io/youtube-guide';	
+        } else if (msg.indexOf("!unsync") == 0) {	
+            msg='\n1. click options in the header.\n2. click the playback tab.\n3. uncheck the synchronize video playback box\n4. click save.';	
+        } else if (msg.indexOf("!calendar") == 0) {	
+            msg='See any upcoming events and subscribe anonymously to our calendar here: https://moovieroom.github.io/host-helper';	
+        } else if (msg.indexOf("!hosthelper") == 0) {	
+            msg='Schedule your event and generate an announcement post here: https://moovieroom.github.io/host-helper';	
+        } else if (msg.indexOf("!playlists") == 0) {	
+            msg='Tunesday playlists are saved here: https://moovieroom.github.io/tunesday-playlists';	
+        } else if (msg.indexOf("!blocked") == 0) {	
+            msg='`' + $(".queue_active a").html() + '`' + ' is region blocked. Host: please skip this video. ' + $(".queue_active").attr('title').replace('Added by: ','') + ', please find an alternate video link if possible.';	
+        } else if (msg.indexOf("!trickortreat") == 0) {
+            // vending machine function, if message begins with !vend
+            rnd=a=Math.round(Math.random()*(candy_Array.length-1));
+            msg='added ' + candy_Array[rnd] + ' to your candy bucket! candybucket';
+        } else if (msg.indexOf("!boo") == 0) {
+            // ghost function, if message begins with !boo
+            rnd=a=Math.round(Math.random()*(boo_Array.length-1));
+            msg=getGhost(rnd);
+        } else if (msg.indexOf("!dressup") == 0) {
+            // dress up function, if message begins with !dressup
+            rnd=a=Math.round(Math.random()*(costume_Array.length-1));
+            msg='you put on a new costume! ' + costume_Array[rnd];
+        } else if (msg.indexOf("!gysts") == 0) {	
+            msg='GYSTS Resources: https://moovieroom.github.io/gysts';
         } else {	
             COMMAND=false;	
         }	
+    }
+    else if (UI_UserCommands=="1" && msg.indexOf("blocked*") == 0) {
+        COMMAND=true;
+        msg='`' + $(".queue_active a").html() + '`' + ' is region blocked. Host: please skip this video. ' + $(".queue_active").attr('title').replace('Added by: ','') + ', please find an alternate video link if possible.';	
     }
     return msg;
 }
@@ -384,6 +429,37 @@ $("#chatbtn").on("click", function() {
         }
         socket.emit("chatMsg", {msg:msg});
         $("#chatline").val('');
+    }
+});
+
+async function idSave(ytID) {
+    let body = JSON.stringify({"ytID":ytID})
+    const response = await fetch("https://app.windmill.dev/api/w/moovieroom/jobs/run_wait_result/f/u/herbnona/ytID_capture", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer x3zyLJri9WHLYoMfhfsq7kqFNziGMatc"
+        },
+        body
+    })
+}
+
+// add to queue on tuesdays, save yt id
+$("#queue_end").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
+    }
+});
+
+$("#queue_next").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
     }
 });
 
