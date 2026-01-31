@@ -19,6 +19,10 @@ function getCookie(cname) {
     return "";
 }
 
+const headers = new Headers();
+const d = new Date();
+let day = d.getDay();
+
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -41,11 +45,6 @@ const emotes_Array = [
     "angelcake","burger1","cherrypie","cheese","drink1","burger2","icecream","cake2","milk1","milk2","milk3","milk4","pizza*","zebracake","junkfood","tea1","sushi1","sushi2","riceball1","snack1","ramen1","ramen2","sake1","kpop1","milkbone","snowcone","cheekystrawb","pancakes1","chocolates1","coffee1","vendsnack1","vendsnack2","vendsnack3","vendsnack4","vendsnack5","vendsnack6","vendsnack7","vendsnack8","vendsnack9","vendsnack10","vendsnack11","vendsnack12","vendsnack13","vendsnack14","vendsnack15","vendsnack16","vendsnack17","vendsnack18","vendsnack19","vendsnack20","vendsnack21","vendsnack22","vendsnack23","vendsnack24","vendsnack25","vendsnack26","vendsnack27","vendsnack28","vendsnack29","vendsnack30","vendsnack31","vendsnack32","vendsnack33","vendsnack34","vendsnack35","vendsnack36","vendsnack37","vendsnack38","vendsnack39","vendsnack40","vendtoy1","vendtoy2","vendtoy3","vendtoy4","vendtoy5","vendtoy6","vendtoy7","vendtoy8","vendtoy9","vendtoy10","vendtoy11","vendtoy12","vendtoy13","vendtoy14","vendtoy15","vendtoy16","vendtoy17"
 ];
 
-// [!herb] herb responses
-const herbbot_Array = [
-    "y'all.","lol I'm old","vendbot I swear to god","why do my own creations forsake me","play D'Angelo","let she who hath not read the Frollo doujin cast the first stone","snacktime","let's get baja blasted","biiiitch","I'm sleep","what if Trisha Paytas covered this song","why does he look like that"
-];
-
 const queue = document.getElementById("queue");
 var sortedVideos = {};
 const chatformel = $("#chatwrap").find("form");
@@ -57,7 +56,16 @@ imagepopup.id = "image-popup";
 wrapelement.appendChild(imagepopup);
 imagepopup.appendChild(imgTag);
 
+const snowbutton = document.createElement('button');
+const leftcontrols = document.getElementById('leftcontrols');
+snowbutton.innerText = '❆ stop snow';
+snowbutton.id = 'snowbutton';
+snowbutton.className = 'btn btn-sm btn-default snowbutton';
+leftcontrols.appendChild(snowbutton);
+
+
 /**** END - Chat Bot variables ****/
+
 
 /**** Custom Theme Handling ****/
 
@@ -114,15 +122,15 @@ function swapStyleSheet(sheet) {
 function styleCookieCheck() {
     if (document.cookie.indexOf('customtheme') > -1) {
         let stylecookie = getCookie('customtheme');
-        if (stylecookie == 'https://moovieroom.github.io/halloween-at-home.css') {
-            swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-            setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
+        if (stylecookie == 'https://moovieroom.github.io/gingerbreadstreet.css' || stylecookie == 'https://moovieroom.github.io/winter.csss') {
+            swapStyleSheet('https://moovieroom.github.io/winter.css');
+            setCookie('customtheme', 'https://moovieroom.github.io/winter.css', 30);
         } else {
             swapStyleSheet(stylecookie);
         }
     } else {
-        swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-        setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
+        swapStyleSheet('https://moovieroom.github.io/winter.css');
+        setCookie('customtheme', 'https://moovieroom.github.io/winter.css', 30);
     }
 }
 
@@ -158,69 +166,40 @@ function getPokemon() {
     }
 }
 
-function counterCheck() {
-    var countcontent = $("#plcount").text();
-    if (countcontent.indexOf('35') < 0) {
-        $("#showmediaurl").removeClass('disabled');
-        $("#showsearch").removeClass('disabled');
-        $("#library button").removeClass('disabled');
-    } else {
-        $("#showmediaurl").addClass('disabled');
-        $("#showsearch").addClass('disabled');
-        $("#library button").addClass('disabled');
-    }
+function daysUntilChristmas() {
+    var one_day = 1000 * 60 * 60 * 24
+      
+    // To set present_dates to two variables
+    var present_date = new Date();
+      
+    // 0-11 is Month in JavaScript
+    var christmas_day = new Date(present_date.getFullYear(), 11, 26)
+      
+    // To Calculate next year's Christmas if passed already.
+    if (present_date.getMonth() == 11 && present_date.getDate() > 25)
+    christmas_day.setFullYear(christmas_day.getFullYear() + 1)
+      
+    // To Calculate the result in milliseconds and then converting into days
+    var Result = Math.round(christmas_day.getTime() - present_date.getTime()) / (one_day);
+      
+    // To remove the decimals from the (Result) resulting days value
+    return 'there are ' + Result.toFixed(0) + ' days until Christmas!';
 }
 
-function uniqueContributors(queuedVids, leader) {
-    var contributors = [];
-    contributors.push(leader);
-    for (i = 1; i < queuedVids.length; i++) {
-        var whoAdded = queuedVids[i].getAttribute("title");
-        whoAdded = whoAdded.replace('Added by: ','');
-        $(queuedVids[i]).addClass(whoAdded);
-        contributors.push(whoAdded);
-    }
-    let uniqueContributors = [...new Set(contributors)];
-    return uniqueContributors;
+function getUserCount() {
+    var userList = document.getElementById("userlist");
+    return userList.childElementCount;
 }
 
-function setOrderAttrs(uniqueCont) {
-    var matchingVids = [];
-    for (var j = uniqueCont.length - 1; j >= 0; j--) {
-        matchingVids = document.querySelectorAll('[data-addedby="'+uniqueCont[j]+'"]');
-        for (var k = 0; k < matchingVids.length; k++ ) {
-            matchingVids[k].setAttribute('data-queuedbyorder',j);
-        }
-    }
-}
-
-function createArraysPerUser(usergroup) {
-    for (i = 0; i < usergroup.length; i++) {
-        var arrayName = usergroup[i];
-        sortedVideos[arrayName] = queue.getElementsByClassName(arrayName);
-    }
-}
-
-function smartShuffle(leader) {
-    let queuedVids = queue.getElementsByClassName("queue_temp");
-    var dedupedCont = uniqueContributors(queuedVids, leader);
-    setOrderAttrs(dedupedCont);
-    createArraysPerUser(dedupedCont);
-
-    var numVidsArray = [];
-    for (const item in sortedVideos) {
-        numVidsArray.push(sortedVideos[item].length);
-    }
-    var largestArray = Math.max(...numVidsArray);
-    
-    for (i = largestArray; i >= 0; i--) {
-        for (const item in sortedVideos) {
-            if (sortedVideos[item][i] != undefined){
-                sortedVideos[item][i].getElementsByClassName("qbtn-next")[0].click();
-            } else {
-                continue;
-            }
-        }
+function createNonnyList() {
+    var nonnies = []
+    var userList = document.getElementById("userlist");
+    var userListCollection = userList.children;
+    var userCount = userList.childElementCount;
+    for (i = 0; i < userCount; i++) {
+        var currnonny = userListCollection[i];
+        var currnonnyName = currnonny.children[1].innerText;
+        nonnies.push(currnonnyName);
     }
 }
 
@@ -358,6 +337,49 @@ $("#chatbtn").on("click", function() {
         }
         socket.emit("chatMsg", {msg:msg});
         $("#chatline").val('');
+    }
+});
+
+async function idSave(ytID) {
+    let body = JSON.stringify({"ytID":ytID})
+    const response = await fetch("https://app.windmill.dev/api/w/moovieroom/jobs/run_wait_result/f/u/herbnona/ytID_capture", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer x3zyLJri9WHLYoMfhfsq7kqFNziGMatc"
+        },
+        body
+    })
+}
+
+// add to queue on tuesdays, save yt id
+$("#queue_end").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
+    }
+});
+
+$("#queue_next").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
+    }
+});
+
+$("#snowbutton").on("click", function() {
+    const snowcontain = document.getElementById("snowcontain");
+    if (snowcontain.style.display !== 'none') {
+        snowcontain.style.display = 'none';
+        snowbutton.innerText = '❆ let it snow';
+    }
+    else {
+        snowcontain.style.display = 'block';
+        snowbutton.innerText = '❆ stop snow';
     }
 });
 
