@@ -79,7 +79,7 @@ var newthemeSelect = [
     ["Moomin Default", "/css/themes/slate.css", "https://moovieroom.github.io/nonny.css"],
     ["Strawbentines - Valentine's Day Light Mode", "/css/themes/slate.css", "https://moovieroom.github.io/strawbentines.css"],
     ["Dreamentines - Valentine's Day Dark Mode", "/css/themes/slate.css", "https://moovieroom.github.io/valentinesdarkmode.css"],
-    ["Summer Bubble - Summer Light Mode", "/css/themes/slate.css", "htatps://moovieroom.github.io/summerbubble.css"],
+    ["Summer Bubble - Summer Light Mode", "/css/themes/slate.css", "https://moovieroom.github.io/summerbubble.css"],
     ["Summer Nights - Summer Dark Mode", "/css/themes/slate.css", "https://moovieroom.github.io/summernights.css"],
     ["Age of Aquarium", "/css/themes/slate.css", "https://moovieroom.github.io/age-of-aquarium.css"],
     ["Eurovision Mode", "/css/themes/slate.css", "https://moovieroom.github.io/eurovisionmode.css"],
