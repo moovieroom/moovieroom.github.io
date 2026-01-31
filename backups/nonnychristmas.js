@@ -132,15 +132,7 @@ function swapStyleSheet(sheet) {
 function styleCookieCheck() {
     if (document.cookie.indexOf('customtheme') > -1) {
         let stylecookie = getCookie('customtheme');
-        if (stylecookie == 'https://moovieroom.github.io/halloween-at-home.css') {
-            swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-            setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
-        } else {
-            swapStyleSheet(stylecookie);
-        }
-    } else {
-        swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-        setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
+        swapStyleSheet(stylecookie);
     }
 }
 

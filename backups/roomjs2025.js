@@ -79,7 +79,7 @@ var newthemeSelect = [
     ["Moomin Default", "/css/themes/slate.css", "https://moovieroom.github.io/nonny.css"],
     ["Strawbentines - Valentine's Day Light Mode", "/css/themes/slate.css", "https://moovieroom.github.io/strawbentines.css"],
     ["Dreamentines - Valentine's Day Dark Mode", "/css/themes/slate.css", "https://moovieroom.github.io/valentinesdarkmode.css"],
-    ["Summer Bubble - Summer Light Mode", "/css/themes/slate.css", "https://moovieroom.github.io/summerbubble.css"],
+    ["Summer Bubble - Summer Light Mode", "/css/themes/slate.css", "htatps://moovieroom.github.io/summerbubble.css"],
     ["Summer Nights - Summer Dark Mode", "/css/themes/slate.css", "https://moovieroom.github.io/summernights.css"],
     ["Age of Aquarium", "/css/themes/slate.css", "https://moovieroom.github.io/age-of-aquarium.css"],
     ["Eurovision Mode", "/css/themes/slate.css", "https://moovieroom.github.io/eurovisionmode.css"],
@@ -91,7 +91,8 @@ var newthemeSelect = [
     ["Halloween at Home", "/css/themes/slate.css", "https://moovieroom.github.io/halloween-at-home.css"],
     ["Moomin Winter", "/css/themes/slate.css", "https://moovieroom.github.io/winter.css"],
     ["Merry Matryoshka", "/css/themes/slate.css", "https://moovieroom.github.io/matryoshka.css"],
-    ["Christmas", "/css/themes/slate.css", "https://moovieroom.github.io/herbalchristmas.css"]
+    ["Christmas", "/css/themes/slate.css", "https://moovieroom.github.io/herbalchristmas.css"],
+    ["Gingerbread Street", "/css/themes/slate.css", "https://moovieroom.github.io/gingerbreadstreet.css"]
 ]
 
 // Add new options
@@ -118,15 +119,7 @@ function swapStyleSheet(sheet) {
 function styleCookieCheck() {
     if (document.cookie.indexOf('customtheme') > -1) {
         let stylecookie = getCookie('customtheme');
-        if (stylecookie == 'https://moovieroom.github.io/halloween-at-home.css') {
-            swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-            setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
-        } else {
-            swapStyleSheet(stylecookie);
-        }
-    } else {
-        swapStyleSheet('https://moovieroom.github.io/whimsidieval.css');
-        setCookie('customtheme', 'https://moovieroom.github.io/whimsidieval.css', 30);
+        swapStyleSheet(stylecookie);
     }
 }
 
@@ -242,9 +235,6 @@ function prepareMessage(msg) {
             // vending machine function, if message begins with !vend
             rnd=a=Math.round(Math.random()*(emotes_Array.length-1));
             msg='yay! you got ' + emotes_Array[rnd];
-        } else if (msg.indexOf("!advice") == 0) {
-            // advice function, if message begins with !advice
-            msg='advicebot gave too much bad advice and died';
         } else if (msg.indexOf("!encounter") == 0) {
             // pokemon function, if message begins with !encounter
             msg=getPokemon();
@@ -254,14 +244,6 @@ function prepareMessage(msg) {
             msg=heldMsg.split('').map((v) =>
             Math.round(Math.random()) ? v.toUpperCase() : v.toLowerCase()
             ).join('') + ' spongebobdurr';
-        } else if (msg.indexOf("!bonk") == 0) {
-            // bonk function, if message begins with !bonk
-            var heldMsg = msg.split('!bonk ')[1];
-            if (heldMsg == undefined) {
-                msg='who are you trying to bonk?';
-            } else {
-                msg='turbobonk \n' + heldMsg + ' got bonked!';
-            }
         } else if (msg.indexOf("!time") == 0) {
             // current local time function, if message begins with !time
             var h = new Date().getHours();
