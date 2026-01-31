@@ -520,7 +520,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .poll-notify::before {
-    content: '\1F420\0020';
+    content: '☃️\0020';
 }
 
 #pollwrap {
