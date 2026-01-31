@@ -683,6 +683,29 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
   text-align: center;
 }
 
+/* DMs */
+.pm-panel {
+    width: 350px;
+}
+
+.panel-heading, .panel-default>.panel-heading {
+    background: #C96480;
+    color: #f8f8f5;
+}
+
+.panel-body {
+    background: #973551eb; 
+}
+
+.pm-input {
+    background: rgba(0,0,0,.8) !important;
+    border-color: #231A20;
+    border-top: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
 /* Hearts! */
 .modebutton {
   float: right;
