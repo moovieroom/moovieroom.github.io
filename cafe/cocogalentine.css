@@ -3,11 +3,11 @@
 
 /* Colour Palette 
 ** #2C1320 - midnight violet - background, emote popup, notifs
-** #6A1B12 - blood red - disconnect
+** #EF709D - blood red - disconnect
 ** #F1FAEE - honeydew - chat text and pane text
-** #F5A4CB - icy blue - buttons
+** #F5A4CB - blush pop - buttons
 ** #a45877 - rosewood- control buttons, pane headers
-** #6A1B12 - blood red - button hovers and default username
+** #EF709D - rose kiss - button hovers and default username
 ** #F8FAF0 - eerie black - modal text
 ** #181411 - smokey black - transparent backgrounds
 ** #5C0A32 - crimson violet - chat and playlist backgrounds
@@ -570,8 +570,8 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 }
 
 .server-msg-disconnect {
-    border-color: #6A1B12;
-    color: #6A1B12;
+    border-color: #EF709D;
+    color: #EF709D;
 }
 
 /* Modals */
