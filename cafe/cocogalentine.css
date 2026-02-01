@@ -12,7 +12,7 @@
 ** #181411 - smokey black - transparent backgrounds
 ** #5C0A32 - crimson violet - chat and playlist backgrounds
 ** #231A20 - raisin - borders and text on light bg
-** #A4B494 - sage - reconnect
+** #E79DB3 - sage - reconnect
 */
 
 /* Main Styles */
@@ -208,7 +208,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .btn:hover {
-    background: #A4B494;
+    background: #E79DB3;
     color: #000;
     text-decoration: none;
     text-shadow: none;
@@ -265,7 +265,7 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 }
 
 .username {
-    color: #A4B494;
+    color: #E79DB3;
 }
 
 #messagebuffer {
@@ -565,8 +565,8 @@ input.form-control[type="text"], input.form-control[type="password"], input.form
 
 /* Server Messages */
 .server-msg-reconnect {
-    border-color: #A4B494 ;
-    color: #A4B494 ;
+    border-color: #E79DB3 ;
+    color: #E79DB3 ;
 }
 
 .server-msg-disconnect {
