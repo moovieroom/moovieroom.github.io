@@ -389,6 +389,10 @@ input.form-control[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
   background: #C96480 !important;
 }
 
+li.queue_entry::after, li.queue_entry:hover::after {
+  color: #49111C;
+}
+
 .videolist {
   color: #f8f8f5;
 }
