@@ -383,11 +383,11 @@ $("#heartbutton").on("click", function() {
     const heartcontain = document.getElementById("hearts");
     if (heartcontain.style.display !== 'none') {
         heartcontain.style.display = 'none';
-        heartbutton.innerText = '❆ let it heart';
+        heartbutton.innerText = '♥ show hearts';
     }
     else {
         heartcontain.style.display = 'block';
-        heartbutton.innerText = '❆ stop heart';
+        heartbutton.innerText = '♥ stop hearts';
     }
 });
 $("#modebutton").on("click", function() {
