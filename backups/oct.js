@@ -27,7 +27,7 @@ function setCookie(name,value,days) {
         var expires = "; expires=" + date.toUTCString();
         var maxage = "; max-age=" + (days * 86400000);
     }
-    document.cookie = name + "=" + (value || "")  + expires + maxage + "; path=/r/theherbgarden";
+    document.cookie = name + "=" + (value || "")  + expires + maxage + "; path=/r/moovieroom";
 }
 
 const headers = new Headers();
