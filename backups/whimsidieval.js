@@ -19,6 +19,10 @@ function getCookie(cname) {
     return "";
 }
 
+const headers = new Headers();
+const d = new Date();
+let day = d.getDay();
+
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -353,6 +357,37 @@ $("#chatbtn").on("click", function() {
         }
         socket.emit("chatMsg", {msg:msg});
         $("#chatline").val('');
+    }
+});
+
+async function idSave(ytID) {
+    let body = JSON.stringify({"ytID":ytID})
+    const response = await fetch("https://app.windmill.dev/api/w/moovieroom/jobs/run_wait_result/f/u/herbnona/ytID_capture", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer x3zyLJri9WHLYoMfhfsq7kqFNziGMatc"
+        },
+        body
+    })
+}
+
+// add to queue on tuesdays, save yt id
+$("#queue_end").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
+    }
+});
+
+$("#queue_next").on("click", function() {
+    let yturl=$("#mediaurl").val();
+    let ytID=yturl.split('?v=')[1];
+    ytID=ytID.split('&')[0];
+    if (day == 2) {
+        idSave(ytID);
     }
 });
 
